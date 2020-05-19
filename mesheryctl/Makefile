@@ -35,3 +35,8 @@ $(BINNAME_WINDOWS):
 .PHONY: clean
 clean:
 	rm -rf $(OUTDIR)
+
+.PHONY: lint
+lint:
+	go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.27.0
+	golangci-lint run ./...
